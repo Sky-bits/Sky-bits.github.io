@@ -43,4 +43,6 @@ dataLayer.push({
     }
     });
     {% endif %}
+    
+     console.log("dataLayers  => ", dataLayer)
     </script>
