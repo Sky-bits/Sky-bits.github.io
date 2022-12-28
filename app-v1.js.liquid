@@ -1,0 +1,33 @@
+
+alert("app js working")
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({ ecommerce: null });
+   console.log("dataLayers  => ", dataLayer)
+
+dataLayer.push({
+    event: "purchase",
+    ecommerce: {
+        transaction_id: "{{ order.order_number }}",
+        value: {{ total_price | times: 0.01 }},
+        tax: {{ tax_price | times: 0.01 }},
+        shipping: {{ shipping_price | times: 0.01 }},
+        currency: "{{ order.currency }}",
+        items: [
+        {% for line_item in line_items %}{
+            item_id: "{{ line_item.product_id }}",
+            item_name: "{{ line_item.title | remove: "'" | remove: '"' }}",
+            currency: "{{ order.currency }}",
+            price: {{ line_item.final_price | times: 0.01 }},
+            quantity: {{ line_item.quantity }}
+        },{% endfor %}
+    ]
+    }
+    });
+
+    {% if first_time_accessed %}
+    
+    {% endif %}
+
+alert("app js working endddd**************")    
+     console.log("dataLayers  => ", dataLayer)
+
