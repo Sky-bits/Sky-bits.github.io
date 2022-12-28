@@ -1,5 +1,6 @@
  
     <script>
+alert("app js working")
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({ ecommerce: null });
    console.log("dataLayers  => ", dataLayer)
@@ -43,6 +44,6 @@ dataLayer.push({
     }
     });
     {% endif %}
-    
+alert("app js working endddd**************")    
      console.log("dataLayers  => ", dataLayer)
     </script>
