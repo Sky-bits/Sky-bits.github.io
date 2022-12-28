@@ -2,7 +2,7 @@
     <script>
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({ ecommerce: null });
-   
+   console.log("dataLayers  => ", dataLayer)
 dataLayer.push({
     event: "purchase",
     ecommerce: {
